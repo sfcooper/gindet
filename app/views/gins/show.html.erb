@@ -1,0 +1,15 @@
+<%= render "partials/mainnav" %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1><%= @gin.name %></h1>
+  <h2><%= @gin.distillery %></h2>
+  <%= image_tag @gin.pic.url(:medium) %>
+  <p class="flow-text">
+    <%= @gin.text %>
+  </p>
+
+
+</div>
+
+<%= render "partials/footer" %>

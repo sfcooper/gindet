@@ -1,0 +1,44 @@
+<%= render "partials/mainnav" %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+<h1 class="thin">Gins</h1>
+
+<p>
+  We currently have <%= @gins.count %> gins listed on The Gin Detective and we're hoping to build one of the biggest lists out there.
+</p>
+
+<div class="row">
+  <% @gins.each do |gin| %>
+  <div class="col s12 l4">
+
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag gin.pic.url(:square) %>
+        <span class="card-title"><%= gin.name %></span>
+      </div>
+      <div class="card-content">
+        <p><%= gin.text %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to 'Read more...', gin_path(gin) %>
+      </div>
+    </div>
+      </div>
+    <% end %>
+
+</div>
+
+
+
+
+
+
+<br>
+
+<%= link_to 'New Gin', new_gin_path %>
+
+
+</div>
+
+<%= render "partials/footer" %>

@@ -1,0 +1,32 @@
+<%= render "partials/mainnav" %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+<h1>Distilleries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @distilleries.each do |distillery| %>
+      <tr>
+        <td><%= link_to 'Show', distillery %></td>
+        <td><%= link_to 'Edit', edit_distillery_path(distillery) %></td>
+        <td><%= link_to 'Destroy', distillery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Distillery', new_distillery_path %>
+
+
+</div>
+
+<%= render "partials/footer" %>

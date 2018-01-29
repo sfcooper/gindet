@@ -1,0 +1,42 @@
+<%= form_for(@gin, local: true, multipart: true) do |form| %>
+  <% if gin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gin.errors.count, "error") %> prohibited this gin from being saved:</h2>
+
+      <ul>
+      <% gin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :snippet %>
+    <%= form.text_field :snippet %>
+  </div>
+
+    <div class="input-field">
+        <%= form.label :distillery %>
+        <%= form.text_field :distillery %>
+    </div>
+
+  <div class="input-field">
+    <%= form.label :text %>
+    <%= form.text_area :text, class: "materialize-textarea" %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :image %>
+    <%= form.file_field :pic %>
+  </div>
+<br />
+  <div class="actions">
+    <%= form.submit class: "btn" %>
+  </div>
+<% end %>

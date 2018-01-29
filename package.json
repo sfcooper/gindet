@@ -1,0 +1,7 @@
+{
+  "name": "gindet",
+  "private": true,
+  "dependencies": {
+    "materialize-css": "^0.100.2"
+  }
+}

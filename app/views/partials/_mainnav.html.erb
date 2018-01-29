@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper white">
+    <a href="/" class="brand-logo center black-text thin">THE GIN DETECTIVE</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><%= link_to 'Gin', gins_path, class: "black-text" %></li>
+      <li><%= link_to 'Distilleries', distilleries_path, class: "black-text"  %></li>
+      <li><%= link_to 'Bars', bars_path, class: "black-text"  %></li>
+      <li><%= link_to 'Blog', blogs_path, class: "black-text"  %></li>
+
+    </ul>
+    <ul class="sidenav" id="mobile-demo">
+      <li><%= link_to 'Gin', gins_path, class: "black-text" %></li>
+      <li><%= link_to 'Distilleries', distilleries_path, class: "black-text"  %></li>
+      <li><%= link_to 'Bars', bars_path, class: "black-text"  %></li>
+      <li><%= link_to 'Blog', blogs_path, class: "black-text"  %></li>
+    </ul>
+  </div>
+</nav>

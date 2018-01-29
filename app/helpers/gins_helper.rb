@@ -1,0 +1,2 @@
+module GinsHelper
+end

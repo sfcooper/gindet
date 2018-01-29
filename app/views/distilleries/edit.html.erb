@@ -1,0 +1,13 @@
+<%= render "partials/mainnav" %>
+<div class="container">
+<h1>Editing Distillery</h1>
+
+<%= render 'form', distillery: @distillery %>
+
+<%= link_to 'Show', @distillery %> |
+<%= link_to 'Back', distilleries_path %>
+
+
+</div>
+
+<%= render "partials/footer" %>

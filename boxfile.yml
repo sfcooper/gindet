@@ -1,0 +1,34 @@
+run.config:
+  engine: ruby
+
+  extra_packages:
+    - nodejs
+    - pkgconf
+    - libxml2
+    - libxslt
+
+data.db:
+  image: nanobox/postgresql:9.5
+
+# add a web component and give it a "start" command
+web.main:
+  start:
+    puma: bundle exec puma -C /app/config/puma.rb
+  writable_dirs:
+    - tmp
+    - log
+  log_watch:
+    rails: 'log/production.log'
+
+# add a worker component and give it a "start" command
+worker.main:
+  start: sidekiq
+  writable_dirs:
+    - tmp
+    - log
+  log_watch:
+    sidekiq: 'path/to/sidekiq/log.file'
+
+deploy.config:
+  extra_steps:
+    - rake assets:precompile RAILS_ENV=production

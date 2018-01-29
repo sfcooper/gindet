@@ -1,0 +1,59 @@
+<%= render "partials/mainnav" %>
+<div class="parallax-container">
+  <div class="container caption right-align">
+    <h3 class="light yellow-text text-lighten-2 thin">The Latest Gins</h3>
+    <div class="row">
+      <% @last3gins.each do |gins| %>
+    <div class="col l3 push-l5">
+
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag gins.pic.url(:square) %>
+          <span class="card-title"><%= gins.name %></span>
+        </div>
+
+        <div class="card-action">
+          <%= link_to 'Read more...', gin_path(gins), class: "black-text text-lighten-1" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+  <%= link_to 'See all gins', gins_path(), class: 'btn' %>
+  </div>
+  <div class="parallax"><%= image_tag ("gin_glass.jpg"), class: "responsive-img" %>
+
+  </div>
+</div>
+
+
+<div class="container">
+
+  <h2 class="thin">Latest Gins</h2>
+
+
+  <div class="row">
+    <% @last3gins.each do |gins| %>
+  <div class="col l3 s12">
+
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag gins.pic.url(:square) %>
+        <span class="card-title"><%= gins.name %></span>
+      </div>
+      <div class="card-content">
+        <p><%= gins.text %></p>
+      </div>
+      <div class="card-action teal lighten-2">
+        <%= link_to 'Read more...', gin_path(gins), class: "yellow-text text-lighten-1" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+</div>
+
+<%= render "partials/footer" %>
