@@ -12,16 +12,12 @@ development:
  pool: 5
  timeout: 5000
 
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  timeout: 5000
-  host: <%= ENV['DATA_DB_HOST'] %>
-  username: <%= ENV['DATA_DB_USER'] %>
-  password: <%= ENV['DATA_DB_PASS'] %>
-
 
 production:
-  <<: *default
-  database: production
+  adapter: postgresql
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
