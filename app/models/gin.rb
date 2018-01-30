@@ -1,4 +1,7 @@
 class Gin < ApplicationRecord
+  belongs_to :distillery
+  
+
 
   has_attached_file :pic, styles: {
   thumb: '100x100>',

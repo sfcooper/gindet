@@ -21,10 +21,14 @@
     <%= form.text_field :snippet %>
   </div>
 
-    <div class="input-field">
-        <%= form.label :distillery %>
-        <%= form.text_field :distillery %>
-    </div>
+  <div class="input-field">
+    <%= form.fields_for :distillery do |distillery_form| %>
+      <p>
+        <%= distillery_form.label :distillery %>
+        <%= distillery_form.text_field :name %>
+      </p>
+    <% end %>
+  </div>
 
   <div class="input-field">
     <%= form.label :text %>

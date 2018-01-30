@@ -70,6 +70,6 @@ class GinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gin_params
-      params.require(:gin).permit(:name, :text, :pic, :slug, :distillery)
+      params.require(:gin).permit(:name, :text, :snippet, :pic, :slug, distillery_attributes: [:id, :name])
     end
 end
