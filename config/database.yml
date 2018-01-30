@@ -7,10 +7,11 @@ development:
 
 
 production:
- adapter: pg
- encoding: utf8
- database: <%= ENV['RDS_DB_NAME'] %>
- username: <%= ENV['RDS_USERNAME'] %>
- password: <%= ENV['RDS_PASSWORD'] %>
- host: <%= ENV['RDS_HOSTNAME'] %>
- port: <%= ENV['RDS_PORT'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: "postgres"
+  password: "scTSW951?~"
+  database: "gin-db"
+  host:   "/cloudsql/gindetective-193712:europe-west2:gin-db"
