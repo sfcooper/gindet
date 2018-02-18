@@ -12,9 +12,6 @@ gem 'webpacker', '~> 3.2', '>= 3.2.2'
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
-#Google Cloud Compute
-gem "appengine", "~> 0.4.1"
-
 #Human URLs
 gem 'friendly_id', '~> 5.1.0'
 
