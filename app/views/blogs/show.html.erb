@@ -1,11 +1,27 @@
 <%= render "partials/mainnav" %>
-<div class="container">
+<div class="container mx-auto pt-8 bg-white p-8 border z-20">
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+
+<h1 class="h1 capitalize"><%= @blog.title %></h1>
+
+<div class="flex">
+  <div class="w-3/4">
+    <%= image_tag @blog.picture.url(:large), class: "p-2 border" %>
+    <p class="pb-4">
+      <%= @blog.text %>
+    </p>
+
+  <%= link_to 'All Posts', blogs_path,class: "bg-blue-dark hover:bg-blue-darker text-white font-bold py-2 px-4 rounded" %>
+  </div>
+
+  <div class="w-1/4">
+
+  </div>
 
 
+
+</div>
 </div>
 
 <%= render "partials/footer" %>

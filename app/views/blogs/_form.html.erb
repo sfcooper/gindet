@@ -11,7 +11,22 @@
     </div>
   <% end %>
 
+  <div class="input-field">
+    <%= form.label :title, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_field :title, class:"w-2/5 shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :text, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_area :text, class:"w-2/5 shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker", rows: "8" %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :picture %>
+    <%= form.file_field :picture %>
+  </div>
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" %>
   </div>
 <% end %>

@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'webpacker', '~> 3.2', '>= 3.2.2'
 
 #image upload
 gem 'paperclip'

@@ -12,35 +12,35 @@
   <% end %>
 
   <div class="input-field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_field :name, class:"w-2/5 shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
   </div>
 
   <div class="input-field">
-    <%= form.label :snippet %>
-    <%= form.text_field :snippet %>
+    <%= form.label :snippet, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_field :snippet, class:"w-2/5 shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
   </div>
 
   <div class="input-field">
     <%= form.fields_for :distillery do |distillery_form| %>
       <p>
-        <%= distillery_form.label :distillery %>
-        <%= distillery_form.text_field :name %>
+        <%= distillery_form.label :distillery, class: "block text-grey-darker text-sm font-bold mb-2" %>
+        <%= distillery_form.text_field :name, class:"w-2/5 shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
       </p>
     <% end %>
   </div>
 
   <div class="input-field">
-    <%= form.label :text %>
-    <%= form.text_area :text, class: "materialize-textarea" %>
+    <%= form.label :text, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_area :text, class:"w-2/5 shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker", rows: "8" %>
   </div>
 
   <div class="input-field">
-    <%= form.label :image %>
+    <%= form.label :image, class: "block text-grey-darker text-sm font-bold mb-2" %>
     <%= form.file_field :pic %>
   </div>
 <br />
   <div class="actions">
-    <%= form.submit class: "btn" %>
+    <%= form.submit class: "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full" %>
   </div>
 <% end %>
