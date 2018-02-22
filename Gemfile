@@ -8,6 +8,9 @@ end
 
 gem 'webpacker', '~> 3.2', '>= 3.2.2'
 
+#for page views
+gem 'punching_bag'
+
 #image upload
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'

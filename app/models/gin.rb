@@ -1,6 +1,7 @@
 class Gin < ApplicationRecord
   belongs_to :distillery
-  
+  acts_as_punchable
+
 
 
   has_attached_file :pic, styles: {

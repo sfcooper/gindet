@@ -1,4 +1,5 @@
 class Blog < ApplicationRecord
+  acts_as_punchable
 
   # This method associates the attribute ":avatar" with a file attachment
 has_attached_file :picture, styles: {

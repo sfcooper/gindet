@@ -9,7 +9,13 @@
   <div class="w-3/4">
     <%= image_tag @blog.picture.url(:large), class: "p-2 border" %>
     <p class="pb-4">
+      <%= @blog.snippet %>
+    </p>
+    <p class="pb-4">
       <%= @blog.text %>
+    </p>
+    <p class="pb-4">
+      Article viewed <%= @blog.hits %> times.
     </p>
 
   <%= link_to 'All Posts', blogs_path,class: "bg-blue-dark hover:bg-blue-darker text-white font-bold py-2 px-4 rounded" %>
