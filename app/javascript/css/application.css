@@ -54,8 +54,9 @@
  *
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
- */
+
 
 .h1 {
   @apply .mb-6 .text-5xl .font-thin;
 }
+ */
