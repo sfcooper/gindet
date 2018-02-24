@@ -3,15 +3,15 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1 class="capitalize" style="font-family: 'Spectral', serif;"><%= @blog.title %></h1>
+<h1 class="" style="font-family: 'Julius Sans One', serif;"><%= @blog.title %></h1>
 
 <div class="flex">
   <div class="w-3/4">
     <%= image_tag @blog.picture.url(:large), class: "p-2 border" %>
-    <p class="pb-4">
+    <p class="pb-4" style="font-family: 'Pavanam', serif;">
       <%= @blog.snippet %>
     </p>
-    <p class="pb-4">
+    <p class="pb-4" style="font-family: 'Pavanam', serif;">
       <%= @blog.text %>
     </p>
     <p class="pb-4">
