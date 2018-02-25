@@ -8,8 +8,5 @@ Rails.application.routes.draw do
   get 'home/index' => 'home#index'
   root 'home#index'
 
-  #static pages
   get 'about', to: 'pages#about'
-  get 'faq', to: 'pages#faq'
-  get 'privacy', to: 'pages#privacy'
 end

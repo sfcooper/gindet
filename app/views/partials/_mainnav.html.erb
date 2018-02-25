@@ -1,18 +1,18 @@
-<nav class="shadow-lg flex w-full items-center justify-between bg-teal p-6">
-  <div class="flex items-center flex-no-shrink text-white mr-6">
-    <a class="font-menu text-xl tracking-tight no-underline text-white" style="font-family: 'Spectral', serif;" href="/">THE GIN DETECTIVE</a>
+<nav class="flex w-full items-center justify-between bg-grey-lightest pt-4 pb-4 mb-8 relative">
+  <div class="flex items-center flex-no-shrink text-black mr-6 absolute pin-t">
+    <a class="font-menu text-3xl tracking-tight no-underline text-black" style="font-family: 'Spectral', serif;" href="/">the gin detective</a>
   </div>
   <div class="block lg:hidden">
-    <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-teal-light hover:text-white hover:border-white">
+    <button class="flex items-center px-3 py-2 border rounded text-black border-teal-light hover:text-white hover:border-white">
       <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
     </button>
   </div>
-  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto absolute pin-r pin-t">
     <div class="text-md lg:flex-grow">
-      <%= link_to 'Gin', gins_path, class: "block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4  no-underline" %>
-      <%= link_to 'Distilleries', distilleries_path, class: "block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4  no-underline"  %>
-      <%= link_to 'Bars', bars_path, class: "block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4  no-underline"  %>
-      <%= link_to 'Blog', blogs_path, class: "block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4  no-underline"  %>
+      <%= link_to 'gins', gins_path, class: "block mt-4 lg:inline-block lg:mt-0 text-black hover:underline mr-4  no-underline" %>
+      <%= link_to 'distilleries', distilleries_path, class: "block mt-4 lg:inline-block lg:mt-0 text-black hover:underline mr-4  no-underline"  %>
+      <%= link_to 'bars', bars_path, class: "block mt-4 lg:inline-block lg:mt-0 text-black hover:underline mr-4  no-underline"  %>
+      <%= link_to 'blog', blogs_path, class: "block mt-4 lg:inline-block lg:mt-0 text-black hover:underline mr-4  no-underline"  %>
     </div>
   </div>
 </nav>

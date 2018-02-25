@@ -1,28 +1,24 @@
-<%= render "partials/mainnav" %>
-  <div class="container mx-auto pt-8">
-    <h3 class="">The Latest Gins</h3>
-    <div class="row">
-      <% @last3gins.each do |gins| %>
-    <div class="col l3 push-l5">
+<div class="container mx-auto pt-8">
+    <%= render "partials/mainnav" %>
+    <div class="flex-wrap items-stretch mx-8">
+      <% @last4gins.each do |gins| %>
+      <div class="flex-1">
 
-      <div class="card">
-        <div class="card-image">
-          <%= image_tag gins.pic.url(:square) %>
-          <span class="card-title"><%= gins.name %></span>
-        </div>
+            <%= image_tag gins.pic.url(:square), class: "" %>
+            <p class="pt-4">
+              <%= gins.created_at.strftime("%b %e, %Y") %>
+            </p>
+            <p class="pt-4">
+              <%= gins.name %>
+            </p>
+            <p class="pb-4"></p>
 
-        <div class="card-action">
-          <%= link_to 'Read more...', gin_path(gins), class: "black-text text-lighten-1" %>
-        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
 
-  </div>
+<br />
   <%= link_to 'See all gins', gins_path(), class: 'btn' %>
-
-
-
 
 
 
@@ -32,11 +28,6 @@
   <% @topblogs.each do |blog| %>
     <%= link_to blog_path(blog) do %><% blog.title %><% end %> <br />
   <% end %>
-
-
-
-
-
 </div>
 
 <%= render "partials/footer" %>

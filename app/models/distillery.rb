@@ -1,6 +1,6 @@
 class Distillery < ApplicationRecord
-  has_many :gins
-  accepts_nested_attributes_for :gins
+  has_many :gins, inverse_of: :distillery
+
 
 
 end

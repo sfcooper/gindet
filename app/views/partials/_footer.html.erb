@@ -1,21 +1,11 @@
 <footer class="pin-b">
-  <div class="w-full bg-teal p-6">
-    <div class="flex">
-      <div class="w-1/2">
-        <h5 class="text-yellow text-lg font-light">The Gin Detective</h5>
-        <p class="text-yellow font-light font-serif italic">Bringing you news and reviews from the world of gin.</p>
-      </div>
-      <div class="w-1/2">
-      <h5 class="text-white text-lg">Links</h5>
-        <ul class="list-reset">
-          <li><%= link_to 'About', "/pages/about", class: "text-white" %></li>
-          <li><%= link_to 'FAQ', "/pages/faq", class: "text-white" %></li>
-          <li><%= link_to 'Privacy', "/pages/privacy", class: "text-white" %></li>
-        </ul>
+  <div class="w-full bg-grey-lightest p-6">
+    <div class="flex justify-center">
+      <div class="w-1/1 text-center text-sm text-black font-hairline tracking-wide">
+          <%= link_to 'about', "/pages/about", class: "text-black no-underline" %> |
+          <%= link_to 'privacy', "/pages/privacy", class: "text-black no-underline" %><br /><br />
+        <p> &copy; <%= Time.new.year %></p>
       </div>
     </div>
-  </div>
-  <div class="bg-teal-dark p-6">
-    <span class="text-yellow font-hairline text-sm tracking-wide"> © 2018 Copyright Happy Drinking</span>
   </div>
 </footer>

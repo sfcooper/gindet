@@ -16,10 +16,12 @@ class GinsController < ApplicationController
   # GET /gins/new
   def new
     @gin = Gin.new
+    @gin.build_distillery
   end
 
   # GET /gins/1/edit
   def edit
+    @gin.build_distillery
   end
 
   # POST /gins

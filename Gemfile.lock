@@ -82,6 +82,7 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    high_voltage (3.0.0)
     httpclient (2.8.3)
     i18n (0.9.3)
       concurrent-ruby (~> 1.0)
@@ -220,6 +221,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   figaro (~> 1.1, >= 1.1.1)
   friendly_id (~> 5.1.0)
+  high_voltage
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   paperclip

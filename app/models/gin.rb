@@ -1,5 +1,6 @@
 class Gin < ApplicationRecord
-  belongs_to :distillery
+  belongs_to :distillery, inverse_of: :gins
+  accepts_nested_attributes_for :distillery
   acts_as_punchable
 
 
