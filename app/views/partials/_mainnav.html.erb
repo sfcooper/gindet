@@ -1,9 +1,9 @@
-<nav class="flex w-full flex-col sm:flex-row sm:justify-between items-center justify-between bg-grey-lightest pt-4 pb-4 mb-8 relative">
-  <div class="flex sm:flex-wrap items-center flex-no-shrink text-black mr-6 absolute pin-t">
+<nav class="flex w-full flex-col sm:flex-row sm:justify-between items-center justify-between bg-grey-lightest pt-8 relative mb-8">
+  <div class="flex sm:flex-wrap items-center flex-no-shrink text-black absolute pin-t sm:pb-8">
     <a class="font-menu text-3xl tracking-tight no-underline text-black" style="font-family: 'Spectral', serif;" href="/">the gin detective</a>
   </div>
 
-  <div class="w-full flex lg:items-center lg:w-auto absolute lg:pin-r lg:pin-t sm:flex-wrap">
+  <div class="absolute lg:pin-r">
     <div class="text-md lg:flex-grow">
       <%= link_to 'gins', gins_path, class: "mt-4 lg:inline-block lg:mt-0 text-black hover:underline mr-4  no-underline" %>
       <%= link_to 'distilleries', distilleries_path, class: "mt-4 lg:inline-block lg:mt-0 text-black hover:underline mr-4 no-underline"  %>

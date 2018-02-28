@@ -7,14 +7,14 @@
   <div class="flex">
     <div class="w-3/4">
 
-      <p class=" pb-4 mb-4">
+      <p class="pb-4 mb-4">
         we currently have <%= @gins.count %> gins listed on the gin detective and we're hoping to build one of the biggest lists out there.
       </p>
-
+      <div class="relative"><!-- start gins loop-->
       <% @gins.each do |gin| %>
-      <div class="w-full flex border rounded">
+      <div class="lg:w-full flex sm:flex-wrap lg:border rounded">
           <%= image_tag gin.pic.url(:square) %>
-          <div class="p-6">
+          <div class="p-6 lg:relative absolute">
             <h2 class="pin-t mb-2 font-hairline text-3xl"><%= link_to gin_path(gin), class: "no-underline text-blue-darkest hover:text-blue-dark" do %><% gin.name %><% end %> </h2>
             <p>
               <%= gin.snippet %>
@@ -26,7 +26,8 @@
         <br />
       <% end %>
       <%= link_to 'New Gin', new_gin_path %>
-    </div>
+    </div><!-- end gins loop-->
+    </div><!--end main column-->
     <div class="1/4">
 
     </div>
