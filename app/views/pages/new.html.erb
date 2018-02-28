@@ -1,0 +1,11 @@
+<div class="container mx-auto pt-8 p-8">
+  <%= render "partials/mainnav" %>
+  <h1 class="mb-6 text-5xl font-thin">New Page</h1>
+
+<%= render 'form', page: @page %>
+
+<%= link_to 'Back', pages_path %>
+
+</div>
+
+<%= render "partials/footer" %>

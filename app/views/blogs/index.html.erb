@@ -11,7 +11,7 @@
   <div class="w-64 rounded overflow-hidden shadow-lg m-2">
     <%= image_tag blog.picture.url(:square), class: "w-full" %>
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2 capitalize"><%= blog.title %></div>
+      <div class="font-bold text-xl mb-2"><%= blog.title %></div>
       <p class="text-grey-darker text-base"><%= blog.snippet %>
       </p>
       <%= link_to 'Read', blog %>

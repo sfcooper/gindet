@@ -2,8 +2,10 @@
   <div class="w-full bg-grey-lightest p-6">
     <div class="flex justify-center">
       <div class="w-1/1 text-center text-sm text-black font-hairline tracking-wide">
-          <%= link_to 'about', "/pages/about", class: "text-black no-underline" %> |
-          <%= link_to 'privacy', "/pages/privacy", class: "text-black no-underline" %><br /><br />
+        <% @pages.each do |page| %>
+            <%= page.title %>
+        <% end %>
+          <br /><br />
         <p> &copy; <%= Time.new.year %></p>
       </div>
     </div>
