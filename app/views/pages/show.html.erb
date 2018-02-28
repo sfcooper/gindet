@@ -2,25 +2,16 @@
   <%= render "partials/mainnav" %>
   <p id="notice"><%= notice %></p>
 
-<h1 class="mb-6 text-5xl font-thin"></h1>
-<p>
-  <strong>Title:</strong>
-  <%= @page.title %>
-</p>
-
-<p>
-  <strong>Slug:</strong>
-  <%= @page.slug %>
-</p>
-
-<p>
-  <strong>Text:</strong>
-  <%= @page.text %>
-</p>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
-
+  <div class="flex items-center">
+    <div class="w-1/5"></div>
+    <div class="w-3/5">
+      <h1 class="mb-6 text-5xl font-thin"><%= @page.title %></h1>
+      <p>
+        <%= @page.text %>
+      </p>
+    </div>
+    <div class="w-1/5"></div>
+  </div>
 </div>
 
 <%= render "partials/footer" %>

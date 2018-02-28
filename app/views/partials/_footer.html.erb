@@ -3,7 +3,7 @@
     <div class="flex justify-center">
       <div class="w-1/1 text-center text-sm text-black font-hairline tracking-wide">
         <% @pages.each do |page| %>
-            <%= link_to page_path(page), class: "no-underline" do %> <%= page.title %><% end %>
+            <%= link_to page_path(page), class: "no-underline appearance-none" do %> <%= page.title %><% end %>
         <% end %>
           <br /><br />
         <p> &copy; <%= Time.new.year %></p>
