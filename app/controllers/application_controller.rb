@@ -6,4 +6,5 @@ class ApplicationController < ActionController::Base
     @pages = Page.all
   end
 
+
 end

@@ -1,32 +1,29 @@
 <div class="container mx-auto pt-8 p-8">
     <%= render "partials/mainnav" %>
-    <div class="flex-wrap items-stretch mx-8">
-      <% @last4gins.each do |gins| %>
-      <div class="flex-1">
-
-            <%= image_tag gins.pic.url(:square), class: "" %>
-            <p class="pt-4">
+    <div class="flex">
+      <div class="flex-1 flex-wrap">
+        <% @last4gins.each do |gins| %>
+            <%= link_to gin_path(gins), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= image_tag gins.pic.url(:square), class: "mt-2" %><% end %>
+            <p class="pt-4 text-sm font-light">
               <%= gins.created_at.strftime("%b %e, %Y") %>
             </p>
-            <p class="pt-4">
-              <%= gins.name %>
+            <p class="pt-4 mb-8">
+              <%= link_to gin_path(gins), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= gins.name %><% end %>
             </p>
-            <p class="pb-4"></p>
-
+            <% end %>
       </div>
-      <% end %>
     </div>
 
 <br />
-  <%= link_to 'See all gins', gins_path(), class: 'btn' %>
+  <%= link_to 'see all gins', gins_path(), class: 'border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white' %>
 
 
 
 
-  <h2 class="thin">This Weeks Most Read Posts</h2>
+  <h2 class="thin pt-8 pb-4">This Weeks Most Read Posts</h2>
 
   <% @topblogs.each do |blog| %>
-    <%= link_to blog_path(blog) do %><% blog.title %><% end %> <br />
+    <%= link_to blog_path(blog), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= blog.title %><% end %> <br />
   <% end %>
 </div>
 
