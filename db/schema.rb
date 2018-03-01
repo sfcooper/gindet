@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180228170709) do
+ActiveRecord::Schema.define(version: 20180301190034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20180228170709) do
     t.string "snippet"
     t.string "botanicals"
     t.integer "distillery_id"
+    t.float "abv"
   end
 
   create_table "pages", force: :cascade do |t|
