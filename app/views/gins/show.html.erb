@@ -7,7 +7,10 @@
     <div class="w-3/5">
     <h1 class="h1 mb-8 w-full text-center lowercase h1 pb-4 mb-2 font-hairline"><%= @gin.name %></h1>
     <h2 class="block w-full text-center lowercase mb-4 font-hairline"><%= @gin.distillery.name %></h2>
-    <%= image_tag @gin.pic.url(:medium), class: "border shadow-lg text-center" %>
+    <div class="content-center">
+        <%= image_tag @gin.pic.url(:medium), class: "border shadow-lg" %>
+    </div>
+
     <p class="text-grey-darker font-light tracking-wide w-full p-4 border-b leading-loose" style="font-family: 'Pavanam', serif;">
       <%= @gin.text %>
     </p>
