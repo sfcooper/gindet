@@ -11,6 +11,7 @@ class GinsController < ApplicationController
   # GET /gins/1.json
   def show
     @gin = Gin.friendly.find(params[:id])
+    @gin.punch(request)
   end
 
   # GET /gins/new

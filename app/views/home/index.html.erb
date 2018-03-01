@@ -1,8 +1,9 @@
 <div class="container mx-auto pt-8 p-8">
     <%= render "partials/mainnav" %>
     <div class="flex">
-      <div class="flex-1 flex-wrap">
+      <div class="flex flex-wrap">
         <% @last4gins.each do |gins| %>
+          <div class="m-8 w-48">
             <%= link_to gin_path(gins), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= image_tag gins.pic.url(:square), class: "mt-2" %><% end %>
             <p class="pt-4 text-sm font-light">
               <%= gins.created_at.strftime("%b %e, %Y") %>
@@ -10,21 +11,29 @@
             <p class="pt-4 mb-8">
               <%= link_to gin_path(gins), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= gins.name %><% end %>
             </p>
-            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
-
-<br />
   <%= link_to 'see all gins', gins_path(), class: 'border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner' %>
 
 
 
+  <div class="flex flex-wrap">
+    <div class="lg:flex-1">
+      <h2 class="font-hairline pt-8 pb-4">this weeks most read posts</h2>
+      <% @topblogs.each do |blog| %>
+        <%= link_to blog_path(blog), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= blog.title %><% end %> <br />
+      <% end %>
+    </div>
+    <div class="lg:flex-1">
+      <h2 class="font-hairline pt-8 pb-4">this weeks trending gins</h2>
+      <% @mostviewedgins.each do |gin| %>
+      <%= link_to gin_path(gin), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= gin.name %><% end %> <br />
+      <% end %>
+    </div>
+  </div>
 
-  <h2 class="thin pt-8 pb-4">this weeks most read posts</h2>
 
-  <% @topblogs.each do |blog| %>
-    <%= link_to blog_path(blog), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= blog.title %><% end %> <br />
-  <% end %>
 </div>
-
 <%= render "partials/footer" %>
