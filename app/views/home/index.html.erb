@@ -22,15 +22,25 @@
   <div class="flex flex-wrap">
     <div class="lg:flex-1">
       <h2 class="font-hairline pt-8 pb-4">this weeks most read posts</h2>
-      <% @topblogs.each do |blog| %>
-        <%= link_to blog_path(blog), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= blog.title %><% end %> <br />
-      <% end %>
+        <ol>
+          <% @topblogs.each do |blog| %>
+            <li>
+            <%= link_to blog_path(blog), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= blog.title %><% end %>
+            </li>
+          <% end %>
+        </ol>
+        <br />
     </div>
     <div class="lg:flex-1">
       <h2 class="font-hairline pt-8 pb-4">this weeks trending gins</h2>
-      <% @mostviewedgins.each do |gin| %>
-      <%= link_to gin_path(gin), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= gin.name %><% end %> <br />
-      <% end %>
+        <ol>
+          <% @mostviewedgins.each do |gin| %>
+          <li>
+            <%= link_to gin_path(gin), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= gin.name %><% end %>
+          </li>
+          <% end %>
+        </ol>
+      <br />
     </div>
   </div>
 
