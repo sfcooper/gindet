@@ -6,20 +6,18 @@
 <h1 class="h1 mb-8 w-full text-center lowercase h1 pb-4 mb-2 font-hairline"><%= @blog.title %></h1>
 
 <div class="flex">
-  <div class="w-3/4">
-    <%= image_tag @blog.picture.url(:large), class: "p-2 border" %>
+  <div class="w-1/5"></div>
+  <div class="w-3/4 content-center">
+    <%= image_tag @blog.picture.url(:large), class: "p-2 border w-full" %>
     <p class="block w-full text-center lowercase mb-4 font-hairline" >
       <%= @blog.snippet %>
     </p>
-    <p class="block w-full text-center lowercase mb-4 font-hairline" >
+    <p class="text-grey-darker font-light tracking-wide w-full p-4 border-b leading-loose" style="font-family: 'Pavanam', serif;" >
       <%= @blog.text %>
     </p>
-    <p class="pb-4">
-      Article viewed <%= @blog.hits %> times.
-    </p>
 
-  <%= link_to 'All Posts', blogs_path,class: "bg-blue-dark hover:bg-blue-darker text-white font-bold py-2 px-4 rounded" %>
   </div>
+  <div class="w-1/5"></div>
 </div>
 
 </div><!--end of container -->
