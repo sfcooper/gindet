@@ -8,13 +8,14 @@
   <div class="w-3/4 flex flex-wrap">
 
 <% @blogs.each do |blog| %>
-  <div class="w-64 rounded overflow-hidden shadow-lg m-2">
+  <div class="w-64 rounded overflow-hidden shadow-lg m-2 pb-4">
     <%= image_tag blog.picture.url(:square), class: "w-full" %>
     <div class="px-6 py-4">
-      <h2 class="font-bold text-xl mb-2"><%= link_to blog_path(blog), class: "no-underline text-blue-darkest hover:text-blue-dark w-auto" do %><% blog.title %><% end %> </h2>
+      <h2 class="text-xl mb-2 font-hairline"><%= link_to blog_path(blog), class: "appearance-none no-underline text-blue-darkest hover:underline w-auto" do %><% blog.title %><% end %> </h2>
       <p class="text-grey-darker text-base"><%= blog.snippet %>
       </p>
-      <%= link_to 'Read', blog %>
+      <br />
+      <%= link_to 'Read', blog, class: "border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner" %>
     </div>
   </div>
   <% end %>

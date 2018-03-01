@@ -36,7 +36,7 @@
         <ol>
           <% @mostviewedgins.each do |gin| %>
           <li>
-            <%= link_to gin_path(gin), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= gin.name %><% end %>
+            <%= link_to gin_path(gin), class: "appearance-none no-underline text-indigo-darker hover:text-indigo-darkest hover:underline pl-2" do %><%= gin.name %><% end %>
           </li>
           <% end %>
         </ol>
