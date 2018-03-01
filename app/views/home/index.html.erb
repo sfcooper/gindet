@@ -20,7 +20,7 @@
 
 
 
-  <h2 class="thin pt-8 pb-4">This Weeks Most Read Posts</h2>
+  <h2 class="thin pt-8 pb-4">this weeks most read posts</h2>
 
   <% @topblogs.each do |blog| %>
     <%= link_to blog_path(blog), class: "no-underline text-indigo-darker hover:text-indigo-darkest hover:underline" do %><%= blog.title %><% end %> <br />
