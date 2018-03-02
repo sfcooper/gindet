@@ -1,6 +1,6 @@
 class Gin < ApplicationRecord
   belongs_to :distillery, inverse_of: :gins
-  accepts_nested_attributes_for :distillery
+  accepts_nested_attributes_for :distillery, reject_if: lambda {|attributes| attributes['name'].blank?}
   acts_as_punchable
 
 
@@ -11,14 +11,11 @@ class Gin < ApplicationRecord
   medium: '300x300>'
 }
 
-# Validate the attached image is image/jpg, image/png, etc
-validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
+  # Validate the attached image is image/jpg, image/png, etc
+  validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
 
-extend FriendlyId
-  friendly_id :name, use: [:slugged, :finders]
-
-
-
+  extend FriendlyId
+    friendly_id :name, use: [:slugged, :finders]
 
   private
   def should_generate_new_friendly_id?

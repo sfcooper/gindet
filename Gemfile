@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#creating and managing users
+gem 'devise'
+gem 'devise_invitable'
 
 gem 'webpacker', '~> 3.2', '>= 3.2.2'
 #for static pages
