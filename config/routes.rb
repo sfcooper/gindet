@@ -12,13 +12,6 @@ Rails.application.routes.draw do
 
 
   #authentication
-    devise_for :admins, controllers: {
-      sessions: 'admins/sessions',
-      registrations: 'admins/registrations',
-      unlocks: 'admins/unlocks'
-    }
-    devise_scope :user do
-      delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_fb_user_session
-    end
+    devise_for :admins
 
 end
