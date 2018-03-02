@@ -1,5 +1,6 @@
 class DistilleriesController < ApplicationController
   before_action :set_distillery, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: [:show, :index]
 
   # GET /distilleries
   # GET /distilleries.json

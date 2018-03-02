@@ -10,5 +10,15 @@ Rails.application.routes.draw do
   get 'home/index' => 'home#index'
   root 'home#index'
 
-  get 'about', to: 'pages#about'
+
+  #authentication
+    devise_for :admins, controllers: {
+      sessions: 'admins/sessions',
+      registrations: 'admins/registrations',
+      unlocks: 'admins/unlocks'
+    }
+    devise_scope :user do
+      delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_fb_user_session
+    end
+
 end
