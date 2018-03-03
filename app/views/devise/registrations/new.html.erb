@@ -1,0 +1,35 @@
+<div class="container mx-auto pt-8 p-8">
+<%= render "partials/mainnav" %>
+  <p id="notice"><%= notice %></p>
+  <h1 class="h1 mb-8 lowercase pb-4 mb-2 font-hairline">sign up</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="input-field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner" %>
+  </div>
+<% end %>
+<br />
+<%= render "devise/shared/links" %>
+</div>
+
+<%= render "partials/footer" %>
