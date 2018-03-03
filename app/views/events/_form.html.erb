@@ -1,0 +1,52 @@
+<%= form_with(model: event, local: true) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_field :title, id: :event_title, class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker hover:border-teal focus:border-teal focus:bg-grey-lightest" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :snippet, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_field :snippet, id: :event_snippet, class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker hover:border-teal focus:border-teal focus:bg-grey-lightest" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.text_area :text, id: :event_text, class:"lg:w-4/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker hover:border-teal focus:border-teal focus:bg-grey-lightest", rows: "8" %>
+  </div>
+  <br />
+
+  <div class="field">
+    <%= form.label :date, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.date_select :date, id: :event_date, class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker hover:border-teal focus:border-teal focus:bg-grey-lightest" %>
+  </div>
+  <br />
+
+  <div class="field">
+    <%= form.label :time, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.time_select :time, id: :event_time, class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker hover:border-teal focus:border-teal focus:bg-grey-lightest" %>
+  </div>
+  <br />
+
+  <div class="field">
+    <%= form.label :price, class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.number_field :price, id: :event_price, class:"lg:w-1/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker hover:border-teal focus:border-teal focus:bg-grey-lightest" %>
+  </div>
+
+
+
+  <div class="submit">
+    <%= form.submit class: 'border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner' %>
+  </div>
+<% end %>

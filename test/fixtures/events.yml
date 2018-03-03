@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  text: MyText
+  date: 2018-03-03
+  time: 2018-03-03 21:00:20
+  price: 1.5
+  slug: MyString
+  snippet: MyString
+
+two:
+  title: MyString
+  text: MyText
+  date: 2018-03-03
+  time: 2018-03-03 21:00:20
+  price: 1.5
+  slug: MyString
+  snippet: MyString
