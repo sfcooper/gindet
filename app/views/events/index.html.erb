@@ -9,7 +9,7 @@
 
 <h2 class="h1 mb-8 w-full lowercase h1 pb-4 mb-2 font-hairline">upcoming events</h2>
 
-  <% if @upcomingevents == 0 %>
+  <% if @upcomingevents.count == 0 %>
   <p>
     there's no upcoming events at the moment.
   </p>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <% end %>
-    <% end %>
+  <% end %>
   <br /><br />
 
 <h2 class="h1 mb-8 w-full lowercase h1 pb-4 mb-2 font-hairline">past events</h2>
