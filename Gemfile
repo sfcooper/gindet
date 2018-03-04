@@ -9,6 +9,10 @@ end
 gem 'devise'
 gem 'devise_invitable'
 
+gem 'selectize-rails'
+
+gem 'jquery-rails'
+
 gem 'webpacker', '~> 3.2', '>= 3.2.2'
 #for static pages
 gem "high_voltage"

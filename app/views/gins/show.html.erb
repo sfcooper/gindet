@@ -4,15 +4,30 @@
 
   <div class="flex items-center">
     <div class="w-1/5"></div>
-    <div class="w-3/5">
+    <div class="w-3/5 border-b pb-6">
     <h1 class="h1 mb-8 w-full text-center lowercase h1 pb-4 mb-2 font-hairline"><%= @gin.name %></h1>
-    <h2 class="block w-full text-center lowercase mb-4 font-hairline"><%= @gin.distillery.name %></h2>
+    <p class="text-center">
+      by
+    </p>
+    <h2 class="block w-full text-center lowercase mb-6 font-hairline"><%= @gin.distillery.name %></h2>
     <div class="content-center">
         <%= image_tag @gin.pic.url(:medium), class: "border shadow-lg" %>
     </div>
 
-    <p class="text-grey-darker font-light tracking-wide w-full p-4 border-b leading-loose" style="font-family: 'Pavanam', serif;">
-      <%= @gin.text %>
+    <p class="text-grey-darker font-light tracking-wide w-full p-4 leading-loose" style="font-family: 'Pavanam', serif;">
+      <%== @gin.text %>
+    </p>
+    <br />
+
+    <p>
+      abv % - <%= @gin.abv %>
+    </p>
+    <br />
+    <p>
+      botanicals:<br /><br />
+      <% @gin.botanicals.each do |botanical|  %>
+          <span class="bg-blue rounded text-white shadow-inner p-2 "><%= botanical.name %></span>
+      <% end %>
     </p>
     </div>
     <div class="w-1/5"></div>

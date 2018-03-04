@@ -39,6 +39,12 @@
     <%= form.label :text, class: "block text-grey-darker text-sm font-bold mb-2" %>
     <%= form.text_area :text, class:"lg:w-3/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker", rows: "8" %>
   </div>
+    <br />
+
+  <div class="form-group">
+    <%= form.label :botanical_ids, "Botanicals", class: "block text-grey-darker text-sm font-bold mb-2" %>
+    <%= form.select :botanical_ids, Botanical.all.pluck(:name, :id), {}, { multiple: true, class: "selectize" } %>
+  </div>
 
   <div class="input-field">
     <%= form.label :image, class: "block text-grey-darker text-sm font-bold mb-2" %>

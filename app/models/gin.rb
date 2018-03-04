@@ -2,6 +2,8 @@ class Gin < ApplicationRecord
   belongs_to :distillery, inverse_of: :gins
   accepts_nested_attributes_for :distillery, reject_if: lambda {|attributes| attributes['name'].blank?}
   acts_as_punchable
+  has_many :gins_botanical
+  has_many :botanicals, through: :gins_botanical
 
 
 

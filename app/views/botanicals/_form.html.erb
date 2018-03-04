@@ -1,0 +1,27 @@
+<%= form_with(model: botanical, local: true) do |form| %>
+  <% if botanical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(botanical.errors.count, "error") %> prohibited this botanical from being saved:</h2>
+
+      <ul>
+      <% botanical.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :botanical_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :botanical_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

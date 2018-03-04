@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303225342) do
+ActiveRecord::Schema.define(version: 20180304211005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(version: 20180303225342) do
     t.text "snippet"
   end
 
+  create_table "botanicals", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "distilleries", force: :cascade do |t|
     t.string "name"
     t.string "street"
@@ -128,9 +135,17 @@ ActiveRecord::Schema.define(version: 20180303225342) do
     t.integer "pic_file_size"
     t.datetime "pic_updated_at"
     t.string "snippet"
-    t.string "botanicals"
     t.integer "distillery_id"
     t.float "abv"
+  end
+
+  create_table "gins_botanicals", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "gin_id"
+    t.bigint "botanical_id"
+    t.index ["botanical_id"], name: "index_gins_botanicals_on_botanical_id"
+    t.index ["gin_id"], name: "index_gins_botanicals_on_gin_id"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -152,4 +167,6 @@ ActiveRecord::Schema.define(version: 20180303225342) do
     t.index ["punchable_type", "punchable_id"], name: "punchable_index"
   end
 
+  add_foreign_key "gins_botanicals", "botanicals"
+  add_foreign_key "gins_botanicals", "gins"
 end

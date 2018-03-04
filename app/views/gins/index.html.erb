@@ -27,8 +27,10 @@
       <% end %>
 
     </div><!-- end gins loop-->
-
+    <% if admin_signed_in? %>
     <%= link_to 'New Gin', new_gin_path %>
+    <% else %>
+    <% end %>
     </div><!--end main column-->
     <div class="1/4 lg:flex-1">
 

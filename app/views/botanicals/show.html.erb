@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @botanical.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @botanical.description %>
+</p>
+
+<%= link_to 'Edit', edit_botanical_path(@botanical) %> |
+<%= link_to 'Back', botanicals_path %>
