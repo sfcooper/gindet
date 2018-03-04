@@ -19,12 +19,23 @@
     </div>
   </div>
   <% end %>
-</div>
-<div class="1/4">
+  <br />
 
 </div>
 
+
+
+
+  <div class="1/4">
+    <% if admin_signed_in? %>
+    <%= link_to 'new blog post', new_blog_path, class: "border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner" %>
+    <% else %>
+    <% end %>
+  </div>
+
 </div>
+
+
 </div>
 
 <%= render "partials/footer" %>

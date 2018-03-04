@@ -4,20 +4,31 @@
 
 <h1 class="h1 mb-8 w-full lowercase h1 pb-4 mb-2 font-hairline">gin events</h1>
 
+<div class="flex">
+  <div class="w-3/4 flex flex-wrap">
+
 <h2 class="h1 mb-8 w-full lowercase h1 pb-4 mb-2 font-hairline">upcoming events</h2>
 
-<% @upcomingevents.each do |event| %>
-  <div class="w-64 rounded overflow-hidden shadow-lg m-2 pb-4">
-    <%= image_tag event.picture.url(:square), class: "w-full" %>
-    <div class="px-6 py-4">
-      <h2 class="text-xl mb-2 font-hairline"><%= link_to event_path(event), class: "appearance-none no-underline text-blue-darkest hover:underline w-auto" do %><% event.title %><% end %> </h2>
-      <p class="text-grey-darker text-base"><%= event.snippet %>
-      </p>
-      <br />
-      <%= link_to 'Read', event, class: "border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner" %>
+  <% if @upcomingevents == 0 %>
+  <p>
+    there's no upcoming events at the moment.
+  </p>
+
+  <% else %>
+
+  <% @upcomingevents.each do |event| %>
+    <div class="w-64 rounded overflow-hidden shadow-lg m-2 pb-4">
+      <%= image_tag event.picture.url(:square), class: "w-full" %>
+      <div class="px-6 py-4">
+        <h2 class="text-xl mb-2 font-hairline"><%= link_to event_path(event), class: "appearance-none no-underline text-blue-darkest hover:underline w-auto" do %><% event.title %><% end %> </h2>
+        <p class="text-grey-darker text-base"><%= event.snippet %>
+        </p>
+        <br />
+        <%= link_to 'Read', event, class: "border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner" %>
+      </div>
     </div>
-  </div>
-  <% end %>
+    <% end %>
+    <% end %>
   <br /><br />
 
 <h2 class="h1 mb-8 w-full lowercase h1 pb-4 mb-2 font-hairline">past events</h2>
@@ -35,15 +46,17 @@
   </div>
   <% end %>
 </div>
-<div class="1/4">
+  <div class="1/4">
+    <% if admin_signed_in? %>
+    <%= link_to 'new event', new_event_path, class: "border border-indigo-darker rounded p-2 no-underline text-indigo-darker hover:text-white hover:bg-indigo-darker hover:shadow-inner" %>
+    <% else %>
+    <% end %>
+  </div>
 
 </div>
 
-</div>
+<br />
 
-<br>
-
-<%= link_to 'New Event', new_event_path %>
 
 </div><!--end of container -->
 
