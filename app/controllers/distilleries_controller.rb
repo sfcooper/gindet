@@ -15,7 +15,7 @@ class DistilleriesController < ApplicationController
 
   # GET /distilleries/new
   def new
-    @distillery = Distillery.find_or_create_by(name: 'name')
+    
   end
 
   # GET /distilleries/1/edit
