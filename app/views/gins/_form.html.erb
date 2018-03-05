@@ -43,7 +43,7 @@
 
   <div class="form-group">
     <%= form.label :botanical_ids, "Botanicals", class: "block text-grey-darker text-sm font-bold mb-2" %>
-    <%= form.select :botanical_ids, Botanical.all.pluck(:name, :id), {}, { multiple: true, class: "selectize" } %>
+    <%= form.select :botanical_ids, Botanical.order(:name).pluck(:name, :id), {}, { multiple: true, class: "selectize" } %>
   </div>
 
   <div class="input-field">
