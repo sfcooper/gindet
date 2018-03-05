@@ -7,12 +7,15 @@ class EventsController < ApplicationController
   def index
     @events = Event.where("date <=?", Date.current)
     @upcomingevents = Event.where("date >=?", Date.current)
+    @meta_title = meta_title 'gin reviews for the best gins around the world'
+    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
     @event = Event.friendly.find(params[:id])
+    @meta_title = meta_title @event.title
   end
 
   # GET /events/new

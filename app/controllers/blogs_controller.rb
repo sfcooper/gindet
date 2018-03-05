@@ -6,12 +6,15 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     @blogs = Blog.order("created_at DESC")
+    @meta_title = meta_title 'gin reviews for the best gins around the world'
+    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
     @blog.punch(request)
+    @meta_title = meta_title @blog.title
   end
 
   # GET /blogs/new

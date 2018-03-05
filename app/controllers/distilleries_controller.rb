@@ -15,7 +15,7 @@ class DistilleriesController < ApplicationController
 
   # GET /distilleries/new
   def new
-    @distillery = Distillery.new
+    @distillery = Distillery.find_or_create_by(name: 'name')
   end
 
   # GET /distilleries/1/edit
@@ -65,7 +65,7 @@ class DistilleriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_distillery
-      @distillery = Distillery.find(params[:id])
+      @distillery = Distillery.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -6,11 +6,14 @@ class BarsController < ApplicationController
   # GET /bars.json
   def index
     @bars = Bar.all
+    @meta_title = meta_title 'gin reviews for the best gins around the world'
+    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
   end
 
   # GET /bars/1
   # GET /bars/1.json
   def show
+    @meta_title = meta_title @bars.name
   end
 
   # GET /bars/new

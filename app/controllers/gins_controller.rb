@@ -6,6 +6,8 @@ class GinsController < ApplicationController
   # GET /gins.json
   def index
     @gins = Gin.all
+    @meta_title = meta_title 'gin reviews for the best gins around the world'
+    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
   end
 
   # GET /gins/1
@@ -13,6 +15,7 @@ class GinsController < ApplicationController
   def show
     @gin = Gin.friendly.find(params[:id])
     @gin.punch(request)
+    @meta_title = meta_title @gin.name
   end
 
   # GET /gins/new
