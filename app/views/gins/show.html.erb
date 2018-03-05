@@ -24,7 +24,7 @@
     </p>
     <br />
     <p>
-      botanicals:<br /><br />
+      <%= @gin.botanicals.count %> botanicals:<br /><br />
       <% @gin.botanicals.each do |botanical|  %>
           <span class="bg-blue rounded text-white shadow-inner p-2 mb-4 inline-block text-sm"><%= botanical.name %></span>
       <% end %>
