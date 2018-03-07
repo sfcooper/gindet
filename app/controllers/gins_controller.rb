@@ -22,7 +22,6 @@ class GinsController < ApplicationController
   def new
     @gin = Gin.new
     @gin.build_distillery
-    @distillery = Distillery.find_or_create_by(name: 'name')
   end
 
   # GET /gins/1/edit
@@ -45,6 +44,7 @@ class GinsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /gins/1
   # PATCH/PUT /gins/1.json
