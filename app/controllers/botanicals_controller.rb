@@ -10,6 +10,7 @@ class BotanicalsController < ApplicationController
   # GET /botanicals/1
   # GET /botanicals/1.json
   def show
+    @similargins = Gin.joins(:botanicals).where("botanicals.name LIKE ?", "%#{@botanical.name}%")
   end
 
   # GET /botanicals/new
@@ -64,11 +65,11 @@ class BotanicalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_botanical
-      @botanical = Botanical.find(params[:id])
+      @botanical = Botanical.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def botanical_params
-      params.require(:botanical).permit(:name, :description)
+      params.require(:botanical).permit(:name, :description, :slug)
     end
 end

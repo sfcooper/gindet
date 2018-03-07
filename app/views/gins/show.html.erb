@@ -26,7 +26,7 @@
     <p>
       <%= @gin.botanicals.count %> botanicals:<br /><br />
       <% @gin.botanicals.each do |botanical|  %>
-          <span class="bg-blue rounded text-white shadow-inner p-2 mb-4 inline-block text-sm"><%= botanical.name %></span>
+          <span><%= link_to botanical_path(botanical), class: "bg-blue rounded text-white shadow-inner p-2 mb-4 inline-block text-sm no-underline" do %><%= botanical.name %><% end %></span>
       <% end %>
     </p>
     </div>

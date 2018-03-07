@@ -5,7 +5,7 @@ class GinsController < ApplicationController
   # GET /gins
   # GET /gins.json
   def index
-    @gins = Gin.all
+    @gins = Gin.order(name: :desc)
     @meta_title = meta_title 'gin reviews for the best gins around the world'
     @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
   end
