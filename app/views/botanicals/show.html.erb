@@ -21,7 +21,7 @@
 <br />
   <div class="flex flex-wrap"><!-- start gins loop-->
   <% @similargins.each do |gin| %>
-  <div class="rounded shadow-lg m-2 w-48 pb-2">
+  <div class="rounded shadow-lg hover:shadow m-2 w-48 pb-2">
       <div class="px-6 py-4">
         <h2 class="text-xl mb-2"><%= link_to gin_path(gin), class: "no-underline text-blue-darkest hover:text-blue-dark w-auto lowercase" do %><% gin.name %><% end %> </h2>
         <p class="flex-shrink">

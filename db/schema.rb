@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307204212) do
+ActiveRecord::Schema.define(version: 20180316181427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20180307204212) do
     t.text "text"
     t.date "date"
     t.time "time"
-    t.float "price"
+    t.decimal "price", precision: 5, scale: 2
     t.string "slug"
     t.string "snippet"
     t.datetime "created_at", null: false
@@ -110,6 +110,9 @@ ActiveRecord::Schema.define(version: 20180307204212) do
     t.string "picture_content_type"
     t.integer "picture_file_size"
     t.datetime "picture_updated_at"
+    t.date "enddate"
+    t.time "endtime"
+    t.string "location"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

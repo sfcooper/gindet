@@ -1,6 +1,11 @@
+<div class="container mx-auto pt-8 p-8">
+<%= render "partials/mainnav" %>
 <h1>Editing Event</h1>
 
 <%= render 'form', event: @event %>
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>
+</div><!--end of container -->
+
+<%= render "partials/footer" %>

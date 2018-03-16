@@ -10,22 +10,27 @@
 
 <p>
   <%== @event.text %>
-</p>
+</p><br />
 
 <p>
-  <strong>Date:</strong>
-  <%= @event.date %>
-</p>
+  <h4>Dates:</h4>
+  <%= @event.date.strftime("%e %B %Y") %> - <%= @event.enddate.strftime("%e %B %Y") %>
+</p><br />
 
 <p>
-  <strong>Time:</strong>
-  <%= @event.time %>
-</p>
+  <h4>Time:</h4>
+  <%= @event.time.strftime("%H: %M") %> - <%= @event.endtime.strftime("%H: %M") %>
+</p><br />
 
 <p>
-  <strong>Price:</strong>
-  <%= @event.price %>
-</p>
+  <h4>Location:</h4>
+  <%= @event.location %>
+</p><br />
+
+<p>
+  <h4>Price:</h4>
+  <%= number_to_currency(@event.price, :unit => "£", :separator => ".", :delimiter => ",") %>
+</p><br />
 
 
 </div><!--end of container -->

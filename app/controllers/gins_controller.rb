@@ -16,7 +16,15 @@ class GinsController < ApplicationController
     @gin = Gin.friendly.find(params[:id])
     @gin.punch(request)
     @meta_title = meta_title @gin.name
+    #@similiar_gins = Gin.joins(:botanicals).where("botanicals.id" => @gin.botanical_ids).where.not('gins.id' => @gin.id).having("COUNT(distinct botanicals.id) >= 3").group("gins.id")
+    if @gin.botanicals.count > 1
+      @botanicals = @gin.botanical_ids
+      @gin_ids = Botanical.select('distinct gin_id').where('gin_id IN (?)', @botanicals).limit(10)
+      @ids = @gin_ids.map(&:gin_id)
+      @similiar_gins = Gin.where('id IN (?)', @ids).where.not(id: @gin) #=> similar all without current gin
+    end
   end
+
 
   # GET /gins/new
   def new

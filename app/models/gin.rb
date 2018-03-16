@@ -6,7 +6,6 @@ class Gin < ApplicationRecord
   has_many :botanicals, through: :gins_botanical
 
 
-
   has_attached_file :pic, styles: {
   thumb: '100x100>',
   square: '200x200#',
