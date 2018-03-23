@@ -35,3 +35,8 @@ $(document).on("turbolinks:load", function() {
     }
   });
 });
+
+$('#distillery').selectize({
+    create: true,
+    sortField: 'text'
+});

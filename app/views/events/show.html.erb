@@ -3,32 +3,32 @@
 <p id="notice"><%= notice %></p>
 
   <h1 class="h1 mb-8 w-full text-center lowercase h1 pb-4 mb-2 font-hairline"><%= @event.title %></h1>
-  <p>
+  <h2 class="block w-full text-center lowercase mb-6 font-hairline">
     <%= @event.snippet %>
-  </p>
+  </h2>
 
 
-<p>
-  <%== @event.text %>
+<p class="text-grey-darker font-light tracking-wide w-full p-4 leading-loose" style="font-family: 'Pavanam', serif;">
+  <%= @event.text %>
 </p><br />
 
-<p>
-  <h4>Dates:</h4>
+<h4 class="block w-full lowercase mb-6 font-hairline">Dates:</h4>
+<p class="text-grey-darker font-light tracking-wide w-full p-4 leading-loose" style="font-family: 'Pavanam', serif;">
   <%= @event.date.strftime("%e %B %Y") %> - <%= @event.enddate.strftime("%e %B %Y") %>
 </p><br />
 
-<p>
-  <h4>Time:</h4>
-  <%= @event.time.strftime("%H: %M") %> - <%= @event.endtime.strftime("%H: %M") %>
+<h4 class="block w-full lowercase mb-6 font-hairline">Time:</h4>
+<p class="text-grey-darker font-light tracking-wide w-full p-4 leading-loose" style="font-family: 'Pavanam', serif;">
+  Start: <%= @event.time.strftime("%H:%M") %> - End: <%= @event.endtime.strftime("%H:%M") %>
 </p><br />
 
-<p>
-  <h4>Location:</h4>
+<h4 class="block w-full lowercase mb-6 font-hairline">Location:</h4>
+<p class="text-grey-darker font-light tracking-wide w-full p-4 leading-loose" style="font-family: 'Pavanam', serif;">
   <%= @event.location %>
 </p><br />
 
-<p>
-  <h4>Price:</h4>
+<h4 class="block w-full lowercase mb-6 font-hairline">Price:</h4>
+<p class="text-grey-darker font-light tracking-wide w-full p-4 leading-loose" style="font-family: 'Pavanam', serif;">
   <%= number_to_currency(@event.price, :unit => "£", :separator => ".", :delimiter => ",") %>
 </p><br />
 

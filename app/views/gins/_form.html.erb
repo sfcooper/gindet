@@ -25,10 +25,11 @@
     <%= form.fields_for :distillery do |distillery_form| %>
       <p>
         <%= distillery_form.label :distillery, class: "block text-grey-darker text-sm font-bold mb-2" %>
-        <%= distillery_form.text_field :name, class:"lg:w-2/5 w-full shadow appearance-none border rounded py-2 px-3 mb-6 text-grey-darker" %>
+        <%= distillery_form.collection_select :id, Distillery.all, :id, :name, {include_blank: true}, class: " lg:w-2/5 selectize" %>
       </p>
     <% end %>
   </div>
+  <br />
 
   <div class="input-field">
     <%= form.label :abv, class: "block text-grey-darker text-sm font-bold mb-2" %>

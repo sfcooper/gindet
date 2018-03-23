@@ -41,6 +41,10 @@ class GinsController < ApplicationController
   # POST /gins.json
   def create
     @gin = Gin.new(gin_params)
+    if params[:gin][:distillery_id].blank? && params[:distillery_name].present?
+      @distillery = Distillery.find_or_create_by(name: params[:distillery_name])
+      params[:gin][:distillery_id] = @distillery.id 
+    end
 
     respond_to do |format|
       if @gin.save
