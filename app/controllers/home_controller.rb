@@ -7,6 +7,8 @@ class HomeController <ApplicationController
     @mostviewedgins = Gin.most_hit(1.day.ago, 3)
     @meta_title = meta_title 'gin reviews for the best gins around the world'
     @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
+
+    render json: @last4gins
   end
 
 end

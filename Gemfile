@@ -22,7 +22,6 @@ gem 'punching_bag'
 
 #image upload
 gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
 
 #Human URLs
 gem 'friendly_id', '~> 5.1.0'
@@ -31,7 +30,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2'
 # Use Postgres as the database for Active Record
 gem 'pg', '~> 0.18.4'
 
@@ -57,6 +56,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'bootsnap', '>= 1.1.0'
+gem 'aws-sdk-s3', '~> 1', require: false
+gem 'mini_magick'
+
+#enable cross origin resource requests
+gem 'rack-cors'
+
+gem 'will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -7,13 +7,6 @@
         <% end %>
           <br /><br />
         <p> &copy; <%= Time.new.year %></p>
-        <% if admin_signed_in? %>
-        <p>
-          logged in as - <%= current_admin.email %> <%= link_to "sign out", destroy_admin_session_path, :method => :delete %>
-        </p>
-        <% else %>
-        <%= link_to 'admin', new_admin_session_path, class: "no-underline" %>
-        <% end %>
       </div>
     </div>
   </div>

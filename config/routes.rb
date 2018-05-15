@@ -1,19 +1,12 @@
 Rails.application.routes.draw do
-
-  resources :botanicals
-  resources :events
-  resources :pages
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'home#index'
+  
+  resources :gins
+  resources :bars
   resources :blogs
   resources :distilleries
-  resources :bars
-  resources :gins
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  get 'home/index' => 'home#index'
-  root 'home#index'
-
-
-  #authentication
-    devise_for :admins
-
+  resources :events
+  resources :botanicals
+  resources :pages
 end

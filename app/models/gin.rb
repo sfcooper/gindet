@@ -4,16 +4,17 @@ class Gin < ApplicationRecord
   acts_as_punchable
   has_many :gins_botanical
   has_many :botanicals, through: :gins_botanical
+  has_one_attached :pic
 
 
-  has_attached_file :pic, styles: {
-  thumb: '100x100>',
-  square: '200x200#',
-  medium: '300x300>'
-}
+ # has_attached_file :pic, styles: {
+ # thumb: '100x100>',
+ # square: '200x200#',
+ # medium: '300x300>'
+#}
 
   # Validate the attached image is image/jpg, image/png, etc
-  validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
+ # validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
 
   extend FriendlyId
     friendly_id :name, use: [:slugged, :finders]

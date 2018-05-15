@@ -1,13 +1,16 @@
 class GinsController < ApplicationController
   before_action :set_gin, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, except: [:show, :index]
+  #before_action :authenticate_admin!, except: [:show, :index]
 
   # GET /gins
   # GET /gins.json
   def index
     @gins = Gin.order(name: :desc)
+    @latestgins = Gin.order("created_at DESC").first(4)
     @meta_title = meta_title 'gin reviews for the best gins around the world'
     @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
+
+    render json: @latestgins
   end
 
   # GET /gins/1
@@ -43,7 +46,7 @@ class GinsController < ApplicationController
     @gin = Gin.new(gin_params)
     if params[:gin][:distillery_id].blank? && params[:distillery_name].present?
       @distillery = Distillery.find_or_create_by(name: params[:distillery_name])
-      params[:gin][:distillery_id] = @distillery.id 
+      params[:gin][:distillery_id] = @distillery.id
     end
 
     respond_to do |format|
