@@ -11,4 +11,9 @@ class HomeController <ApplicationController
     render json: @last4gins
   end
 
+  def mostviewedgins
+    @mostviewedgins = Gin.most_hit(1.day.ago, 3)
+    render json: @mostviewedgins 
+  end
+
 end

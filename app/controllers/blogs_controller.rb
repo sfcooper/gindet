@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_admin!, except: [:show, :index]
+  #before_action :authenticate_admin!, except: [:show, :index]
 
   # GET /blogs
   # GET /blogs.json
@@ -8,6 +8,11 @@ class BlogsController < ApplicationController
     @blogs = Blog.order("created_at DESC")
     @meta_title = meta_title 'gin reviews for the best gins around the world'
     @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
+
+    respond_to do |format|
+      format.html 
+      format.json 
+    end
   end
 
   # GET /blogs/1

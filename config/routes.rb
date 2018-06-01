@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   resources :events
   resources :botanicals
   resources :pages
+
+  # API Endpoints
+
+  get 'latestgins', to: "gins#latestgins"
+  get 'mostviewedgins', to: "home#mostviewedgins"
+  
 end

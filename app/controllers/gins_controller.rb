@@ -6,10 +6,13 @@ class GinsController < ApplicationController
   # GET /gins.json
   def index
     @gins = Gin.order(name: :desc)
-    @latestgins = Gin.order("created_at DESC").first(4)
     @meta_title = meta_title 'gin reviews for the best gins around the world'
-    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
+    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions' d
 
+  end
+
+  def latestgins
+    @latestgins = Gin.order("created_at DESC").first(4)
     render json: @latestgins
   end
 
