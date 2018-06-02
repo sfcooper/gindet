@@ -7,7 +7,7 @@ class GinsController < ApplicationController
   def index
     @gins = Gin.order(name: :desc)
     @meta_title = meta_title 'gin reviews for the best gins around the world'
-    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions' d
+    @meta_description = 'gin reviews, tasting notes, botanicals and serving suggestions'
 
   end
 
