@@ -20,6 +20,11 @@ class BlogsController < ApplicationController
   def show
     @blog.punch(request)
     @meta_title = meta_title @blog.title
+
+    respond_to do |format|
+      format.html 
+      format.json 
+    end
   end
 
   # GET /blogs/new
