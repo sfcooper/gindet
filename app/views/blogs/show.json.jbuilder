@@ -1,1 +1,1 @@
-json.partial! "blogs/blog", blog: @blog
+json.extract! @blog, :id, :title, :text, :created_at, :snippet
