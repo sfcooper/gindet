@@ -13,3 +13,4 @@ production:
  username: postgres
  password: scTSW951?~
  host: 35.197.242.201
+ port: 5432
