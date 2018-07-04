@@ -12,4 +12,4 @@ production:
  database: postgres
  username: postgres
  password: scTSW951?~
- host: gindet-208421:europe-west2:gin-db
+ host: 35.197.242.201
