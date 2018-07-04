@@ -13,7 +13,12 @@ class GinsController < ApplicationController
 
   def latestgins
     @latestgins = Gin.order("created_at DESC").first(4)
-    render json: @latestgins
+
+    respond_to do |format|
+      format.html {  }
+      format.json {  }
+    end
+    #render json: @latestgins
   end
 
   # GET /gins/1
