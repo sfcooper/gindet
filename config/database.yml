@@ -9,8 +9,8 @@ development:
 production:
  adapter: postgresql
  encoding: utf8
- database: postgres
- username: postgres
- password: scTSW951?~
- host: 35.197.242.201
- port: 5432
+ database: <%= ENV['RDS_DB_NAME'] %>
+ username: <%= ENV['RDS_USERNAME'] %>
+ password: <%= ENV['RDS_PASSWORD'] %>
+ host: <%= ENV['RDS_HOSTNAME'] %>
+ port: <%= ENV['RDS_PORT'] %>
