@@ -13,7 +13,7 @@ gem 'selectize-rails'
 
 gem 'jquery-rails'
 
-gem 'webpacker', '~> 3.2', '>= 3.2.2'
+gem 'webpacker'
 #for static pages
 gem "high_voltage"
 
