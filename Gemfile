@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'ruby'
+ruby "2.4.0"
 
 #creating and managing users
 gem 'devise'
